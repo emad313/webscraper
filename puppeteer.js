@@ -12,11 +12,11 @@ const resultHandle = await page.evaluateHandle(
   aHandle
 );
 
-await resultHandle.jsonValue();
+var html = await resultHandle.jsonValue();
 await resultHandle.dispose();
 
   await browser.close();
-  return 0;
+  return html;
 }
 
 webScraper().then((value) => {
